@@ -3,12 +3,12 @@ const app = express();
 const port = 3000;
 
 const UserinfoRouter = require("./routes/userinfo.js");
-const CommentRouter = require("./routes/comments.js");
+const guestbooksRouter = require("./routes/guestbooks.js");
 const connet =require("./schemas");
 connet();
 
 app.use(express.json());
-app.use("/api",[UserinfoRouter, CommentRouter]);
+app.use("/api",[UserinfoRouter, guestbooksRouter]);
 
 
 app.get('/', (req, res) => {
